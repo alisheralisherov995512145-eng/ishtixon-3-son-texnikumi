@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ishtixon tuman 3-son texnikumi</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #063b63;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            color: #063b63;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+
+        .logo h2 {
+            font-size: 18px;
+        }
+
+        .logo p {
+            font-size: 12px;
+            color: #cdeaff;
+            margin-top: 3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4cc9f0;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 650px;
+
+            background:
+                linear-gradient(
+                    rgba(3, 48, 80, 0.78),
+                    rgba(0, 119, 182, 0.68)
+                ),
+                url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h3 {
+            color: #90e0ef;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 30px;
+            background: white;
+            color: #063b63;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-blue {
+            background: #00a8e8;
+            color: white;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: #063b63;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        /* ABOUT */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .about h2 {
+            color: #063b63;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .icon {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: #e0f7ff;
+            margin: auto auto 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 35px;
+        }
+
+        .card h3 {
+            color: #063b63;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* PROFESSIONS */
+
+        .professions {
+            background: #e8f6fc;
+        }
+
+        .profession-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            border-left: 5px solid #00a8e8;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+        }
+
+        .profession-card h3 {
+            color: #063b63;
+            margin-bottom: 10px;
+        }
+
+        /* NEWS */
+
+        .news-card {
+            overflow: hidden;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .date {
+            color: #00a8e8;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        /* STATISTICS */
+
+        .stats {
+            background: linear-gradient(135deg, #063b63, #0077b6);
+            color: white;
+        }
+
+        .stats .section-title h2 {
+            color: white;
+        }
+
+        .stats .section-title p {
+            color: #d9f4ff;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .stat-box h2 {
+            font-size: 45px;
+            color: #90e0ef;
+        }
+
+        .stat-box p {
+            margin-top: 10px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item h3 {
+            color: #063b63;
+            margin-bottom: 7px;
+        }
+
+        .contact-item p {
+            color: #64748b;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #032b46;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer p {
+            color: #b9dff1;
+            margin-top: 10px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 850px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .about,
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 500px) {
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero h3 {
+                font-size: 19px;
+            }
+
+            section {
+                padding: 55px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🎓
+        </div>
+
+        <div>
+            <h2>3-SON TEXNIKUMI</h2>
+            <p>Ishtixon tumani</p>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#home">Bosh sahifa</a>
+
+        <a href="#about">Texnikum haqida</a>
+
+        <a href="#yonalishlar">Yo‘nalishlar</a>
+
+        <a href="#yangiliklar">Yangiliklar</a>
+
+        <a href="#aloqa">Aloqa</a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h3>ISHTIXON TUMANI</h3>
+
+        <h1>
+            3-SON TEXNIKUMI
+        </h1>
+
+        <p>
+            Zamonaviy kasb va mutaxassisliklarni egallang.
+            Bilim oling, tajriba orttiring va kelajagingizni yarating!
+        </p>
+
+        <a href="#about" class="btn">
+            Texnikum haqida
+        </a>
+
+        <a href="#aloqa" class="btn btn-blue">
+            Bog‘lanish
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>Texnikum haqida</h2>
+
+        <p>
+            Kasbiy ta’lim va kelajak sari ishonchli qadam
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+        <img
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80"
+            alt="Texnikum">
+
+
+        <div>
+
+            <h2>
+                Ishtixon tuman 3-son texnikumi
+            </h2>
+
+            <p>
+                Ishtixon tuman 3-son texnikumi yoshlarni zamonaviy
+                kasb va mutaxassisliklarga tayyorlashga xizmat qiladi.
+            </p>
+
+            <p>
+                Texnikumda nazariy bilim bilan bir qatorda amaliy
+                ko‘nikmalarni rivojlantirishga katta e’tibor beriladi.
+            </p>
+
+            <p>
+                Bizning maqsadimiz — mehnat bozorida talab yuqori
+                bo‘lgan, bilimli va malakali mutaxassislarni tayyorlash.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY US -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Nima uchun biz?</h2>
+
+        <p>
+            Talabalarimiz uchun imkoniyatlar
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <h3>
+                Zamonaviy ta’lim
+            </h3>
+
+            <p>
+                Zamonaviy o‘quv dasturlari va ta’lim metodlari.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🔧
+            </div>
+
+            <h3>
+                Amaliy mashg‘ulot
+            </h3>
+
+            <p>
+                Kasbiy bilimlarni amaliy mashg‘ulotlar orqali
+                mustahkamlash.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                💼
+            </div>
+
+            <h3>
+                Kasb va kelajak
+            </h3>
+
+            <p>
+                Talab yuqori bo‘lgan kasblarni egallash imkoniyati.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- YO‘NALISHLAR -->
+
+<section class="professions" id="yonalishlar">
+
+    <div class="section-title">
+
+        <h2>Ta’lim yo‘nalishlari</h2>
+
+        <p>
+            Kasb-hunar va mutaxassisliklar
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="profession-card">
+
+            <h3>
+                🔩 Metallga ishlov berish texnologiyasi
+            </h3>
+
+            <p>
+                Metall materiallariga ishlov berish va zamonaviy
+                texnologiyalar bilan ishlash ko‘nikmalari.
+            </p>
+
+        </div>
+
+
+        <div class="profession-card">
+
+            <h3>
+                🚛 Yuk va yo‘lovchi tashishni tashkil etish
+            </h3>
+
+            <p>
+                Transport jarayonlarini tashkil etish va boshqarish
+                bo‘yicha kasbiy bilimlar.
+            </p>
+
+        </div>
+
+
+        <div class="profession-card">
+
+            <h3>
+                💻 Zamonaviy texnologiyalar
+            </h3>
+
+            <p>
+                Raqamli texnologiyalar va zamonaviy kasblar bo‘yicha
+                bilimlarni rivojlantirish.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATISTICS -->
+
+<section class="stats">
+
+    <div class="section-title">
+
+        <h2>Texnikumimiz</h2>
+
+        <p>
+            Rivojlanish va natija sari
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="stat-box">
+
+            <h2>3</h2>
+
+            <p>
+                Texnikum
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <h2>90+</h2>
+
+            <p>
+                Qabul o‘rinlari
+            </p>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <h2>2025</h2>
+
+            <p>
+                Yangi bosqich
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- YANGILIKLAR -->
+
+<section id="yangiliklar">
+
+    <div class="section-title">
+
+        <h2>Yangiliklar</h2>
+
+        <p>
+            Texnikum hayotidagi so‘nggi yangiliklar
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="news-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80"
+                alt="Talabalar">
+
+            <div class="news-content">
+
+                <div class="date">
+                    TEXNIKUM YANGILIGI
+                </div>
+
+                <h3>
+                    Talabalar uchun yangi imkoniyatlar
+                </h3>
+
+                <p>
+                    Yoshlar uchun ta’lim va kasbiy rivojlanish
+                    imkoniyatlari kengaytirilmoqda.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="news-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+                alt="Amaliy mashg‘ulot">
+
+            <div class="news-content">
+
+                <div class="date">
+                    AMALIY MASHG‘ULOT
+                </div>
+
+                <h3>
+                    Amaliy mashg‘ulotlar
+                </h3>
+
+                <p>
+                    Talabalar kasbiy bilimlarini amaliy mashg‘ulotlarda
+                    mustahkamlamoqda.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="news-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+                alt="Tadbir">
+
+            <div class="news-content">
+
+                <div class="date">
+                    TADBIR
+                </div>
+
+                <h3>
+                    Ma’naviy-ma’rifiy tadbir
+                </h3>
+
+                <p>
+                    Talabalar ishtirokida turli ma’naviy-ma’rifiy
+                    tadbirlar tashkil etilmoqda.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="aloqa">
+
+    <div class="section-title">
+
+        <h2>Biz bilan bog‘lanish</h2>
+
+        <p>
+            Ishtixon tuman 3-son texnikumi
+        </p>
+
+    </div>
+
+
+    <div class="contact">
+
+        <div class="contact-box">
+
+            <div class="contact-item">
+
+                <h3>📍 Manzil</h3>
+
+                <p>
+                    Samarqand viloyati,
+                    Ishtixon tumani,
+                    Azamat shaharchasi,
+                    Oqtepa ko‘chasi, 54
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h3>📞 Telefon</h3>
+
+                <p>
+                    +998 (97) 917-15-78
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h3>🏢 Tashkilot turi</h3>
+
+                <p>
+                    Davlat texnikumi
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <h2 style="color:#063b63;">
+                Bizning manzilimiz
+            </h2>
+
+            <br>
+
+            <p style="line-height:1.8;color:#64748b;">
+
+                Ishtixon tuman 3-son texnikumi
+                Samarqand viloyati, Ishtixon tumani,
+                Azamat shaharchasi, Oqtepa ko‘chasi, 54-manzilda
+                joylashgan.
+
+            </p>
+
+            <br>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Ishtixon+tuman+3-son+texnikumi"
+                target="_blank"
+                class="btn btn-blue">
+
+                🗺 Xaritadan ko‘rish
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        🎓 Ishtixon tuman 3-son texnikumi
+    </h3>
+
+    <p>
+        Bilim • Kasb • Kelajak
+    </p>
+
+    <p>
+        © 2026 Barcha huquqlar himoyalangan.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
